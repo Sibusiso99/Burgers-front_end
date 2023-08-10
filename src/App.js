@@ -11,6 +11,8 @@ function App() {
       <BrowserRouter>
           <Routes>
               <Route path="/" element={ <Burgers/>}/>
+              <Route path="/adding" element={ <Adding/>}/>
+              <Route path="/update" element={ <update/>}/>
           </Routes>
       </BrowserRouter>
       
