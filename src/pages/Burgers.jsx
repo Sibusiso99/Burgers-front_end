@@ -17,6 +17,15 @@ const Burgers = () => {
         }
         fetchAllBurgers()
     },[])
+
+    const handleDelete = async (id) =>{
+        try{
+            await axios.delete("http://localhost:8080/types/"+id)
+            window.location.reload()
+        }catch(err){
+            console.log(err)
+        }
+    }
     return <div>
         <h1>Sibusiso Burgers</h1>
         <div className="burgers">
@@ -26,8 +35,8 @@ const Burgers = () => {
                     <h2>{burger.name}</h2>
                     <p>{burger.description}</p>
                     <span>{burger.price}</span>
-                    <button className="delete">Delete</button>
-                    <button className="update">Update</button>
+                    <button className="delete" onClick={()=>handleDelete(burger.id)}>Delete</button>
+                    <button className="update"><a href={`/update/${burger.id}`}>Update</a></button>
                 </div>
             ))}
         </div>
