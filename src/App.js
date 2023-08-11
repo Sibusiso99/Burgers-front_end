@@ -7,6 +7,7 @@ import {
 import Add from "./pages/Add";
 import Update from "./pages/Update";
 import Burgers from "./pages/Burgers";
+import "../src/styles.css"
 
 function App(){
   return (

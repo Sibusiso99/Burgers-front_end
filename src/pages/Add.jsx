@@ -1,4 +1,6 @@
+import axios from 'axios';
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 
 const Add = () => {
 
@@ -9,9 +11,20 @@ const Add = () => {
         cover:""
     })
 
+    const navigate = useNavigate()
+
     const handleChange = (e) =>{
-        setBurger(prev=>({...prev,[e.target.name]: e.target.value}));
+        setBurger((prev)=>({...prev,[e.target.name]: e.target.value}));
     };
+    const handleClick = async e => {
+        e.preventDefault()
+        try{
+            await axios.post("http://localhost:8080/types", burger)
+            navigate("/burgers")
+        }catch(err){
+            console.log(err)
+        }
+    }
     console.log(burger)
     return (
         <div className='form'>
@@ -20,7 +33,10 @@ const Add = () => {
             <input type="text" placeholder="description" onChange={handleChange } name="description"/>
             <input type="number" placeholder="price" onChange={handleChange } name="price"/>
             <input type="text" placeholder="cover" onChange={handleChange } name="cover" />
+
+            <button onClick={handleClick}>Add</button>
         </div>
+        
     )
 }
 

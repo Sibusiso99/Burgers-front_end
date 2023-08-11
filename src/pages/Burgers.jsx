@@ -26,6 +26,8 @@ const Burgers = () => {
                     <h2>{burger.name}</h2>
                     <p>{burger.description}</p>
                     <span>{burger.price}</span>
+                    <button className="delete">Delete</button>
+                    <button className="update">Update</button>
                 </div>
             ))}
         </div>
