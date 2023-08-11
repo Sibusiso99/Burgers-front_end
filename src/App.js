@@ -3,21 +3,24 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
+
+import Add from "./pages/Add";
+import Update from "./pages/Update";
 import Burgers from "./pages/Burgers";
 
-function App() {
+function App(){
   return (
     <div className="App">
-      <BrowserRouter>
+       <BrowserRouter>
           <Routes>
-              <Route path="/" element={ <Burgers/>}/>
-              <Route path="/adding" element={ <Adding/>}/>
-              <Route path="/update" element={ <update/>}/>
+              <Route path="/burgers"  element={<Burgers/>}/>
+              <Route path="/add"  element={<Add/>}/>
+              <Route path="/update"  element={<Update/>}/>
           </Routes>
-      </BrowserRouter>
-      
+
+       </BrowserRouter>
     </div>
-  );
+  )
 }
 
 export default App;
