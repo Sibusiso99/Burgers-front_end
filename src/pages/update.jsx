@@ -3,6 +3,7 @@
 import axios from 'axios';
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 const Update = () => {
 
@@ -14,14 +15,18 @@ const Update = () => {
     })
 
     const navigate = useNavigate()
+    const location = useLocation()
 
+    const burgerId = location.pathname.split("/")[2]
+
+    console.log(location.pathname.split("/")[2])
     const handleChange = (e) =>{
         setBurger((prev)=>({...prev,[e.target.name]: e.target.value}));
     };
     const handleClick = async e => {
         e.preventDefault()
         try{
-            await axios.post("http://localhost:8080/types", burger)
+            await axios.put("http://localhost:8080/types/"+ burgerId,burger)
             navigate("/burgers")
         }catch(err){
             console.log(err)

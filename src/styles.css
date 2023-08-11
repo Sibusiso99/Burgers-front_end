@@ -58,5 +58,10 @@ input{
 }
 
 .formButton{
-    
+    border: none;
+    padding: 10px;
+    background-color: lightcoral;
+    color: aliceblue;
+    font-weight: bold;
+    cursor: pointer;
 }
