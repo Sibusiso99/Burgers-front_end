@@ -40,7 +40,7 @@ const Update = () => {
             <input type="text" placeholder="description" onChange={handleChange } name="description"/>
             <input type="number" placeholder="price" onChange={handleChange } name="price"/>
             <input type="text" placeholder="cover" onChange={handleChange } name="cover" />
-            <img id="image" src="" alt="iamge" />
+            
 
             <button className="formButton" onClick={handleClick}>Update</button>
         </div>
