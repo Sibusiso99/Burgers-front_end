@@ -19,3 +19,7 @@ you will then choose on whether you are:
         post -- INSERTING
         put -- UPDATING
         delete -- DELETING
+
+The Database folder holds the database created for burgers
+The database is a mysql database
+You will open the folder take the script either upload it to xampp or mysql workbench to run it locally
